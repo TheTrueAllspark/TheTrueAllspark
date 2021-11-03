@@ -244,31 +244,3 @@ while True:
         portchoice = input("Invalid choice. Please try again.\nWould you like to specify a port?\n1. Yes\n2. No\n")
 
 
-"""target = input("Enter target ip address: ")
-
-
-report_list = []
-
-for i in range(begin,end+1):
-    report = {}
-    res = scanner.scan(target,str(i), '-vv -A -T5')
-    state = res["scan"][target]["tcp"][i]["state"]
-    service = res["scan"][target]["tcp"][i]["name"]
-    product = res["scan"][target]["tcp"][i]["product"]
-    extrainfo = res["scan"][target]["tcp"][i]["extrainfo"]
-    reason = res["scan"][target]["tcp"][i]["reason"]
-    version = res["scan"][target]["tcp"][i]["version"]
-    conf = res["scan"][target]["tcp"][i]["conf"]
-    report['port'] = i
-    report['state'] = state
-    report['service'] = service
-    report['product'] = product
-    report['extrainfo'] = extrainfo
-    report['reason'] = reason
-    report['version'] = version
-    report['conf'] = conf
-    
-    if state == 'open':
-        report_list.append(report)
-with open("PortScan.txt", "w") as text_file:
-    print(report_list, file=text_file)"""
