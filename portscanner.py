@@ -22,48 +22,56 @@ while True:
 
         while True:
             if response == '1':
-                report = {}
+                print("\nInitiating scan... standby for super secret spy information!\n\n")
                 scanner.scan(target, ports, '-vv -sS -T4')
-                report['Nmap Version: '] = scanner.nmap_version()
-                report['IP Status: '] = scanner[target].state()
-                report['Protocols: '] = scanner[target].all_protocols()
-                report['Open Ports: '] = scanner[target]['tcp'].keys()
-
-                report_list.append(report)
-                print(report_list)
+                for host in scanner.all_hosts():
+                    print(f'Host: {target:15} ({scanner[target].hostname()})')
+                    print(f'State: {scanner[target].state():15}')
+                    for proto in scanner[target].all_protocols():
+                        print('----------')
+                        print(f'Protocol: {proto:15}')                        
+                        
+                        for port in scanner[target][proto].keys():
+                            print(f"Port: {port:5}\tState: {scanner[target][proto][port]['state']:5}\tService: {scanner[target][proto][port]['name']:20}")
                 break
             elif response == '2':
-                report = {}
+                print("\nInitiating scan... standby for super secret spy information!\n\n")
                 scanner.scan(target, ports, '-vv -sU -T4')
-                report['Nmap Version: '] = scanner.nmap_version()
-                report['IP Status: '] = scanner[target].state()
-                report['Protocols: '] = scanner[target].all_protocols()
-                report['Open Ports: '] = scanner[target]['udp'].keys()
-
-                report_list.append(report)
-                print(report_list)
+                for host in scanner.all_hosts():
+                    print(f'Host: {target:15} ({scanner[target].hostname()})')
+                    print(f'State: {scanner[target].state():15}')
+                    for proto in scanner[target].all_protocols():
+                        print('----------')
+                        print(f'Protocol: {proto:15}')                        
+                        
+                        for port in scanner[target][proto].keys():
+                            print(f"Port: {port:5}\tState: {scanner[target][proto][port]['state']:5}\tService: {scanner[target][proto][port]['name']:20}")
                 break
             elif response == '3':
-                report = {}
+                print("\nInitiating scan... standby for super secret spy information!\n\n")
                 scanner.scan(target, ports, '-vv -sS -sV -sC -A -O -T4')
-                report['Nmap Version: '] = scanner.nmap_version()
-                report['IP Status: '] = scanner[target].state()
-                report['Protocols: '] = scanner[target].all_protocols()
-                report['Open Ports: '] = scanner[target]['tcp'].keys()
-
-                report_list.append(report)
-                print(report_list)
+                for host in scanner.all_hosts():
+                    print(f'Host: {target:15} ({scanner[target].hostname()})')
+                    print(f'State: {scanner[target].state():15}')
+                    for proto in scanner[target].all_protocols():
+                        print('----------')
+                        print(f'Protocol: {proto:15}')                        
+                        
+                        for port in scanner[target][proto].keys():
+                            print(f"Port: {port:5}\tState: {scanner[target][proto][port]['state']:5}\tService: {scanner[target][proto][port]['name']:20}")
                 break
             elif response == '4':
-                report = {}
+                print("\nInitiating scan... standby for super secret spy information!\n\n")
                 scanner.scan(target, ports, '-vv -T4')
-                report['Nmap Version: '] = scanner.nmap_version()
-                report['IP Status: '] = scanner[target].state()
-                report['Protocols: '] = scanner[target].all_protocols()
-                report['Open Ports: '] = scanner[target]['tcp'].keys()
-
-                report_list.append(report)
-                print(report_list)
+                for host in scanner.all_hosts():
+                    print(f'Host: {target:15} ({scanner[target].hostname()})')
+                    print(f'State: {scanner[target].state():15}')
+                    for proto in scanner[target].all_protocols():
+                        print('----------')
+                        print(f'Protocol: {proto:15}')                        
+                        
+                        for port in scanner[target][proto].keys():
+                            print(f"Port: {port:5}\tState: {scanner[target][proto][port]['state']:5}\tService: {scanner[target][proto][port]['name']:20}")
                 break
             elif response == '5':
                 report = {}
@@ -73,15 +81,17 @@ while True:
                 print(report_list)
                 break
             elif response == '6':
-                report = {}
+                print("\nInitiating scan... standby for super secret spy information!\n\n")
                 scanner.scan(target, ports, '-vv -sS -Pn -T4')
-                report['Nmap Version: '] = scanner.nmap_version()
-                report['IP Status: '] = scanner[target].state()
-                report['Protocols: '] = scanner[target].all_protocols()
-                report['Open Ports: '] = scanner[target]['tcp'].keys()
-
-                report_list.append(report)
-                print(report_list)
+                for host in scanner.all_hosts():
+                    print(f'Host: {target:15} ({scanner[target].hostname()})')
+                    print(f'State: {scanner[target].state():15}')
+                    for proto in scanner[target].all_protocols():
+                        print('----------')
+                        print(f'Protocol: {proto:15}')                        
+                        
+                        for port in scanner[target][proto].keys():
+                            print(f"Port: {port:5}\tState: {scanner[target][proto][port]['state']:5}\tService: {scanner[target][proto][port]['name']:20}")
                 break
             else:
                 response = input("Invalid choice. Please try again.\n\nPlease enter the type of scan you want to run\
@@ -109,95 +119,111 @@ while True:
 
         while True:
             if response == '1':
-                report = {}
+                print("\nInitiating scan... standby for super secret spy information!\n\n")
                 scanner.scan(target,'1-1024', '-vv -sS -T4')
-                report['Nmap Version: '] = scanner.nmap_version()
-                report['IP Status: '] = scanner[target].state()
-                report['Protocols: '] = scanner[target].all_protocols()
-                report['Open Ports: '] = scanner[target]['tcp'].keys()
-                
-
-                report_list.append(report)
-                print(report_list)
+                for host in scanner.all_hosts():
+                    print(f'Host: {target:15} ({scanner[target].hostname()})')
+                    print(f'State: {scanner[target].state():15}')
+                    for proto in scanner[target].all_protocols():
+                        print('----------')
+                        print(f'Protocol: {proto:15}')                        
+                        
+                        for port in scanner[target][proto].keys():
+                            print(f"Port: {port:5}\tState: {scanner[target][proto][port]['state']:5}\tService: {scanner[target][proto][port]['name']:20}")
                 break
             elif response == '2':
-                report = {}
+                print("\nInitiating scan... standby for super secret spy information!\n\n")
                 scanner.scan(target,'1-65535', '-vv -sS -T4')
-                report['Nmap Version: '] = scanner.nmap_version()
-                report['IP Status: '] = scanner[target].state()
-                report['Protocols: '] = scanner[target].all_protocols()
-                report['Open Ports: '] = scanner[target]['tcp'].keys()
-
-                report_list.append(report)
-                print(report_list)
+                for host in scanner.all_hosts():
+                    print(f'Host: {target:15} ({scanner[target].hostname()})')
+                    print(f'State: {scanner[target].state():15}')
+                    for proto in scanner[target].all_protocols():
+                        print('----------')
+                        print(f'Protocol: {proto:15}')                        
+                        
+                        for port in scanner[target][proto].keys():
+                            print(f"Port: {port:5}\tState: {scanner[target][proto][port]['state']:5}\tService: {scanner[target][proto][port]['name']:20}")
                 break
             elif response == '3':
-                report = {}
+                print("\nInitiating scan... standby for super secret spy information!\n\n")
                 scanner.scan(target,'1-1024', '-vv -sU -T4')
-                report['Nmap Version: '] = scanner.nmap_version()
-                report['IP Status: '] = scanner[target].state()
-                report['Protocols: '] = scanner[target].all_protocols()
-                report['Open Ports: '] = scanner[target]['udp'].keys()
-
-                report_list.append(report)
-                print(report_list)
+                for host in scanner.all_hosts():
+                    print(f'Host: {target:15} ({scanner[target].hostname()})')
+                    print(f'State: {scanner[target].state():15}')
+                    for proto in scanner[target].all_protocols():
+                        print('----------')
+                        print(f'Protocol: {proto:15}')                        
+                        
+                        for port in scanner[target][proto].keys():
+                            print(f"Port: {port:5}\tState: {scanner[target][proto][port]['state']:5}\tService: {scanner[target][proto][port]['name']:20}")
                 break
             elif response == '4':
-                report = {}
+                print("\nInitiating scan... standby for super secret spy information!\n\n")
                 scanner.scan(target,'1-65535', '-vv -sU -T4')
-                report['Nmap Version: '] = scanner.nmap_version()
-                report['IP Status: '] = scanner[target].state()
-                report['Protocols: '] = scanner[target].all_protocols()
-                report['Open Ports: '] = scanner[target]['udp'].keys()
-
-                report_list.append(report)
-                print(report_list)
+                for host in scanner.all_hosts():
+                    print(f'Host: {target:15} ({scanner[target].hostname()})')
+                    print(f'State: {scanner[target].state():15}')
+                    for proto in scanner[target].all_protocols():
+                        print('----------')
+                        print(f'Protocol: {proto:15}')                        
+                        
+                        for port in scanner[target][proto].keys():
+                            print(f"Port: {port:5}\tState: {scanner[target][proto][port]['state']:5}\tService: {scanner[target][proto][port]['name']:20}")
                 break
             elif response == '5':
-                report = {}
+                print("\nInitiating scan... standby for super secret spy information!\n\n")
                 scanner.scan(target,'1-1024', '-vv -sS -sV -sC -A -O -T4')
-                report['Nmap Version: '] = scanner.nmap_version()
-                report['IP Status: '] = scanner[target].state()
-                report['Protocols: '] = scanner[target].all_protocols()
-                report['Open Ports: '] = scanner[target]['tcp'].keys()
-
-                report_list.append(report)
-                print(report_list)
+                for host in scanner.all_hosts():
+                    print(f'Host: {target:15} ({scanner[target].hostname()})')
+                    print(f'State: {scanner[target].state():15}')
+                    for proto in scanner[target].all_protocols():
+                        print('----------')
+                        print(f'Protocol: {proto:15}')                        
+                        
+                        for port in scanner[target][proto].keys():
+                            print(f"Port: {port:5}\tState: {scanner[target][proto][port]['state']:5}\tService: {scanner[target][proto][port]['name']:20}")
                 break
             elif response == '6':
-                report = {}
+                print("\nInitiating scan... standby for super secret spy information!\n\n")
                 scanner.scan(target,'1-65535', '-vv -sS -sV -sC -A -O -T4')
-                report['Nmap Version: '] = scanner.nmap_version()
-                report['IP Status: '] = scanner[target].state()
-                report['Protocols: '] = scanner[target].all_protocols()
-                report['Open Ports: '] = scanner[target]['tcp'].keys()
-
-                report_list.append(report)
-                print(report_list)
+                for host in scanner.all_hosts():
+                    print(f'Host: {target:15} ({scanner[target].hostname()})')
+                    print(f'State: {scanner[target].state():15}')
+                    for proto in scanner[target].all_protocols():
+                        print('----------')
+                        print(f'Protocol: {proto:15}')                        
+                        
+                        for port in scanner[target][proto].keys():
+                            print(f"Port: {port:5}\tState: {scanner[target][proto][port]['state']:5}\tService: {scanner[target][proto][port]['name']:20}")
                 break
             elif response == '7':
-                report = {}
+                print("\nInitiating scan... standby for super secret spy information!\n\n")
                 scanner.scan(target,'1-1024', '-vv -T4')
-                report['Nmap Version: '] = scanner.nmap_version()
-                report['IP Status: '] = scanner[target].state()
-                report['Protocols: '] = scanner[target].all_protocols()
-                report['Open Ports: '] = scanner[target]['tcp'].keys()
-
-                report_list.append(report)
-                print(report_list)
+                for host in scanner.all_hosts():
+                    print(f'Host: {target:15} ({scanner[target].hostname()})')
+                    print(f'State: {scanner[target].state():15}')
+                    for proto in scanner[target].all_protocols():
+                        print('----------')
+                        print(f'Protocol: {proto:15}')                        
+                        
+                        for port in scanner[target][proto].keys():
+                            print(f"Port: {port:5}\tState: {scanner[target][proto][port]['state']:5}\tService: {scanner[target][proto][port]['name']:20}")
                 break
             elif response == '8':
-                report = {}
+                print("\nInitiating scan... standby for super secret spy information!\n\n")
                 scanner.scan(target,'1-65535', '-vv -T4')
-                report['Nmap Version: '] = scanner.nmap_version()
-                report['IP Status: '] = scanner[target].state()
-                report['Protocols: '] = scanner[target].all_protocols()
-                report['Open Ports: '] = scanner[target]['tcp'].keys()
-
-                report_list.append(report)
-                print(report_list)
+                for host in scanner.all_hosts():
+                    print(f'Host: {target:15} ({scanner[target].hostname()})')
+                    print(f'State: {scanner[target].state():15}')
+                    for proto in scanner[target].all_protocols():
+                        print('----------')
+                        print(f'Protocol: {proto:15}')                        
+                        
+                        for port in scanner[target][proto].keys():
+                            print(f"Port: {port:5}\tState: {scanner[target][proto][port]['state']:5}\tService: {scanner[target][proto][port]['name']:20}")
                 break
             elif response == '9':
+                print("\nInitiating scan... standby for super secret spy information!\n\n")
                 report = {}
                 report['Scan'] = scanner.scan(target, arguments="-O")['scan'][target]['osmatch'][1]
 
@@ -205,26 +231,30 @@ while True:
                 print(report_list)
                 break
             elif response == '10':
-                report = {}
+                print("\nInitiating scan... standby for super secret spy information!\n\n")
                 scanner.scan(target,'1-1024', '-vv -sS -Pn -T4')
-                report['Nmap Version: '] = scanner.nmap_version()
-                report['IP Status: '] = scanner[target].state()
-                report['Protocols: '] = scanner[target].all_protocols()
-                report['Open Ports: '] = scanner[target]['tcp'].keys()
-
-                report_list.append(report)
-                print(report_list)
+                for host in scanner.all_hosts():
+                    print(f'Host: {target:15} ({scanner[target].hostname()})')
+                    print(f'State: {scanner[target].state():15}')
+                    for proto in scanner[target].all_protocols():
+                        print('----------')
+                        print(f'Protocol: {proto:15}')                        
+                        
+                        for port in scanner[target][proto].keys():
+                            print(f"Port: {port:5}\tState: {scanner[target][proto][port]['state']:5}\tService: {scanner[target][proto][port]['name']:20}")
                 break
             elif response == '11':
-                report = {}
+                print("\nInitiating scan... standby for super secret spy information!\n\n")
                 scanner.scan(target,'1-65535', '-vv -sS -Pn -T4')
-                report['Nmap Version: '] = scanner.nmap_version()
-                report['IP Status: '] = scanner[target].state()
-                report['Protocols: '] = scanner[target].all_protocols()
-                report['Open Ports: '] = scanner[target]['tcp'].keys()
-
-                report_list.append(report)
-                print(report_list)
+                for host in scanner.all_hosts():
+                    print(f'Host: {target:15} ({scanner[target].hostname()})')
+                    print(f'State: {scanner[target].state():15}')
+                    for proto in scanner[target].all_protocols():
+                        print('----------')
+                        print(f'Protocol: {proto:15}')                        
+                        
+                        for port in scanner[target][proto].keys():
+                            print(f"Port: {port:5}\tState: {scanner[target][proto][port]['state']:5}\tService: {scanner[target][proto][port]['name']:20}")
                 break
             else:
                 response = input("Invalid choice. Please try again.\n\nPlease enter the type of scan you want to run\
@@ -242,5 +272,6 @@ while True:
         break
     else:
         portchoice = input("Invalid choice. Please try again.\nWould you like to specify a port?\n1. Yes\n2. No\n")
+
 
 
